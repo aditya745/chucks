@@ -14,24 +14,27 @@ class Main extends Component {
     }
 
     render() {
+        console.log(this.props.saveFacts)
         const details = this.props.fact.map((fact, id) => (
             <div key={id}>
                 <h2>{fact.value}</h2>
                 <button onClick={() => this.handleSave(fact.value)}>Save</button>
             </div>
-        ))
+        ));
         return (
             <div>
+                
                 {details}
                 <br />
                 <button onClick={() => this.handleRefresh()}>New Joke</button>
-                
             </div>
         )
     }
 }
-const mapStateToProps = state => ({
+const mapStateToProps = state => {
+    return {
     fact: state.reducer.facts,
     saveFacts: state.reducer.savedFacts
-})
+    }
+}
 export default connect(mapStateToProps, { getFacts, savedFacts })(Main);

@@ -7,6 +7,7 @@ import SavedFacts from './components/savedFacts';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 class App extends Component {
   render() {
+    console.log(this.props.saveFacts)
     return (
       <div className="App">
       <Router>
@@ -27,7 +28,7 @@ class App extends Component {
       </ul>
       <Switch>
           <Route exact path="/" component = {Main} />
-          <Route path="/savedFacts" render = {() => <SavedFacts savedFacts = {this.props.saveFacts} {...this.props}/>} />
+          <Route path="/savedFacts" render = {() => <SavedFacts savedFacts = {this.props.saveFacts}/>} />
           <Route path="/categories" component = {Categories} />
           <Route path="/aboutUs" component = {About} />
       </Switch>
