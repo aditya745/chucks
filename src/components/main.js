@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getFacts, savedFacts } from '../store/actions/factActions';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Navbar from './navbar';
+
 class Main extends Component {
     componentDidMount() {
         this.props.getFacts();
@@ -23,7 +22,6 @@ class Main extends Component {
         ))
         return (
             <div>
-                <Navbar />
                 {details}
                 <br />
                 <button onClick={() => this.handleRefresh()}>New Joke</button>
@@ -34,6 +32,6 @@ class Main extends Component {
 }
 const mapStateToProps = state => ({
     fact: state.reducer.facts,
-    savedFacts: state.reducer.savedFacts
+    saveFacts: state.reducer.savedFacts
 })
 export default connect(mapStateToProps, { getFacts, savedFacts })(Main);
