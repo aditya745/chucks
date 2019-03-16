@@ -1,10 +1,10 @@
 import React from 'react';
 import Main from './main';
-import SavedFacts from './savedFacts';
 import About from './aboutUs';
 import Categories from './categories';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
-const Navbar = () => {
+import SavedFacts from './savedFacts';
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+const Navbar = (props) => {
     return (
         <div>
             <Router>
@@ -25,7 +25,7 @@ const Navbar = () => {
                 </ul>
                 <Switch>
                     <Route exact path="/" component = {Main} />
-                    <Route exact path="/savedFacts" component = {SavedFacts} />
+                    <Route exact path="/savedFacts" render = {() => <SavedFacts savedFacts = {props.savedFacts} />} />
                     <Route exact path="/categories" component = {Categories} />
                     <Route exact path="/aboutUs" component = {About} />
                 </Switch>

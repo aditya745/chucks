@@ -1,4 +1,4 @@
-import { GET_FACT } from './types';
+import { GET_FACT, SAVED_FACT } from './types';
 import axios from 'axios';
 
 export const getFacts = () => dispatch => {
@@ -10,3 +10,10 @@ export const getFacts = () => dispatch => {
     })
 )
 };
+export const savedFacts = value =>  {
+    return {
+        type: SAVED_FACT,
+        payload: value
+    }
+    
+}
