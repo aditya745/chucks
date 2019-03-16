@@ -25,7 +25,7 @@ const Navbar = (props) => {
                 </ul>
                 <Switch>
                     <Route exact path="/" component = {Main} />
-                    <Route exact path="/savedFacts" render = {() => <SavedFacts savedFacts = {props.savedFacts} />} />
+                    
                     <Route exact path="/categories" component = {Categories} />
                     <Route exact path="/aboutUs" component = {About} />
                 </Switch>

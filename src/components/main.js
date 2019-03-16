@@ -23,7 +23,7 @@ class Main extends Component {
         ))
         return (
             <div>
-                <Navbar savedFacts = {this.props.savedFacts} />
+                <Navbar />
                 {details}
                 <br />
                 <button onClick={() => this.handleRefresh()}>New Joke</button>
