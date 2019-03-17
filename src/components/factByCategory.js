@@ -32,17 +32,19 @@ class FactByCategory extends Component {
     );
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Fact By Category
-            <select value={this.state.value} onChange={this.handleChange}>
+        <form onSubmit={this.handleSubmit} className="form">
+        <div className="form_header">
+          <h2 className="fact_label">Fact By Category</h2>
+        </div>
+        <div>
+            <select value={this.state.value} onChange={this.handleChange} className="custom_select">
               <option />
               <option value="explicit">Explicit</option>
               <option value="fashion">Fashion</option>
               <option value="sport">Sport</option>
             </select>
-          </label>
           <input type="submit" value="submit" />
+        </div>
         </form>
         {factByCategory}
       </div>
