@@ -1,7 +1,8 @@
-import { GET_FACT, SAVED_FACT } from '../actions/types';
+import { GET_FACT, SAVED_FACT, FACT_BY_CATEGORY } from '../actions/types';
 const initialState = {
     facts: [],
-    savedFacts: []
+    savedFacts: [],
+    factByCategory: []
 }
 export default function(state = initialState, action){
     switch(action.type){
@@ -14,6 +15,11 @@ export default function(state = initialState, action){
         return {
             ...state,
             savedFacts: [...state.savedFacts, action.payload]
+        };
+        case FACT_BY_CATEGORY:
+        return {
+            ...state,
+            factByCategory: [action.payload]
         }
         default:
         return state;

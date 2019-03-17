@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import Main from './components/main';
-import About from './components/aboutUs';
-import Categories from './components/categories';
+import About from './components/aboutMe';
 import SavedFacts from './components/savedFacts';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import  { connect } from 'react-redux';
+
 class App extends Component {
   render() {
-    console.log(this.props.saveFacts)
     return (
       <div className="App">
       <Router>
@@ -20,16 +20,12 @@ class App extends Component {
               <Link to ="/savedFacts">SavedFacts</Link>
           </li>
           <li>
-              <Link to ="/categories">Categories</Link>
-          </li>
-          <li>
-              <Link to ="/aboutUs">About Us</Link>
+              <Link to ="/aboutMe">About Me</Link>
           </li>
       </ul>
       <Switch>
           <Route exact path="/" component = {Main} />
           <Route path="/savedFacts" render = {() => <SavedFacts savedFacts = {this.props.saveFacts}/>} />
-          <Route path="/categories" component = {Categories} />
           <Route path="/aboutUs" component = {About} />
       </Switch>
       </div>
@@ -37,6 +33,11 @@ class App extends Component {
       </div>
     );
   }
+};
+const mapStateToProps = state => {
+  return {
+    saveFacts: state.reducer.savedFacts,
+  }
 }
 
-export default App;
+export default connect(mapStateToProps)(App);

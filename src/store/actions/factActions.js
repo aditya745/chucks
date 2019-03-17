@@ -1,4 +1,4 @@
-import { GET_FACT, SAVED_FACT } from './types';
+import { GET_FACT, SAVED_FACT, FACT_BY_CATEGORY } from './types';
 import axios from 'axios';
 
 export const getFacts = () => dispatch => {
@@ -15,5 +15,12 @@ export const savedFacts = value =>  {
         type: SAVED_FACT,
         payload: value
     }
-    
+};
+export const factByCategory = (category) => dispatch => {
+    axios.get(`https://api.chucknorris.io/jokes/random?category=${category}`)
+    .then(res =>
+        dispatch({
+            type: FACT_BY_CATEGORY,
+            payload: res.data
+        }))
 }
