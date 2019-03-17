@@ -18,11 +18,13 @@ body {
   justify-content: center;
   list-style-type: none;
   font-size: 2vw;
+  
 }
 .navbar,
 ul,
 li {
   padding: 1%;
+  color:white
 }
 .random_joke_container {
   width: 100%;
@@ -120,4 +122,15 @@ img {
 .save_button:hover {
   background-color: grey;
   color: white;
+}
+.about_me_container {
+    text-align: center;
+    font-size: 2vw;
+}
+.savedFacts_container {
+    margin: 2%;
+    font-size: 1.5vw;
+}
+.savedFacts_container li {
+    list-style-type: none;
 }

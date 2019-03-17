@@ -29,7 +29,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Main} />
               <Route path="/savedFacts" render={() => <SavedFacts savedFacts={this.props.saveFacts} />} />
-              <Route path="/aboutUs" component={About} />
+              <Route path="/aboutMe" component={About} />
             </Switch>
           </div>
         </Router>

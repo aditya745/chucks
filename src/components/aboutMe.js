@@ -2,7 +2,7 @@ import React from 'react';
 import contact from "../image/contact.jpg";
 const About = props => {
     return (
-      <div>
+      <div className="about_me_container">
         <h1>About us</h1>
         <div className="contact-container">
         <div className = "contact-image">

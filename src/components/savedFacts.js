@@ -5,8 +5,8 @@ const SavedFacts = props => {
       return <li key = {id}>{fact}</li>
     })
   return (
-      <div>
-        <h1>savedFact</h1>
+      <div className="savedFacts_container">
+        <h1>SavedFact</h1>
         <h3>{savedFacts}</h3>
       </div>
     );
