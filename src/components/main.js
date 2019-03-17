@@ -18,7 +18,7 @@ class Main extends Component {
     const details = this.props.fact.map((fact, id) => (
       <div key={id}>
         <h2>{fact.value}</h2>
-        <button onClick={() => this.handleSave(fact.value, fact.id)}>
+        <button onClick={() => this.handleSave(fact.value, fact.id)} className="save_button">
           Save
         </button>
       </div>
@@ -37,8 +37,9 @@ class Main extends Component {
             <div className="random_joke_container">
               <div>{details}</div>
             </div>
+
             <div>
-              <button onClick={() => this.handleRefresh()}>New Joke</button>
+              <button onClick={() => this.handleRefresh()} className="new_joke button">New Joke</button>
             </div>
           </div>
         </div>
