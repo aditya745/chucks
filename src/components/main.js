@@ -1,24 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getFacts, savedFacts } from '../store/actions/factActions';
-import axios from 'axios';
+import FactByCategory from './factByCategory';
 
 class Main extends Component {
-    state = {
-        value: "",
-    }
-    handleChange = e => {
-        this.setState({value: e.target.value});
-    }
-    handleSubmit = e => {
-        e.preventDefault();
-        axios.get(`https://api.chucknorris.io/jokes/random?category=${this.state.value}`)
-        .then(res => console.log(res.data.value)
-            );
-    }
     componentDidMount() {
         this.props.getFacts();
-        
+
     }
     handleRefresh = () => {
         this.props.getFacts();
@@ -26,7 +14,7 @@ class Main extends Component {
     handleSave = (value, id) => {
         this.props.savedFacts(value, id)
     }
-    
+
     render() {
         const details = this.props.fact.map((fact, id) => (
             <div key={id}>
@@ -34,24 +22,14 @@ class Main extends Component {
                 <button onClick={() => this.handleSave(fact.value, fact.id)}>Save</button>
             </div>
         ));
+
         return (
             <div>
                 <h1>Random Joke</h1>
                 {details}
                 <br />
                 <button onClick={() => this.handleRefresh()}>New Joke</button>
-                <form onSubmit = {this.handleSubmit}>
-                    <label>
-                    Fact By Category
-                    <select value = {this.state.value} onChange= {this.handleChange}>
-                    <option></option>    
-                    <option value="explicit">Explicit</option>
-                    <option value="fashion">Fashion</option>
-                    <option value="sport">Sport</option>
-                    </select>
-                    </label>
-                    <input type="submit" value="submit" />
-                </form>
+                <FactByCategory />
             </div>
         )
     }
