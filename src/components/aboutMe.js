@@ -3,7 +3,7 @@ import contact from "../image/contact.jpg";
 const About = props => {
     return (
       <div className="about_me_container">
-        <h1>About us</h1>
+        <h1>About Me</h1>
         <div className="contact-container">
         <div className = "contact-image">
           <img src={contact} alt="contact" style = {{width:"50%", height:"50%"}}/>
