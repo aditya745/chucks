@@ -61,7 +61,7 @@ img {
   font-size: 1.5vw;
 }
 .custom_select {
-  display: block;
+  display: inline-block;
   font-size: 1.3vw;
   font-family: sans-serif;
   font-weight: 700;
@@ -86,7 +86,7 @@ img {
   background-color: #555555;
   color: white;
 }
-.new_joke {
+.button {
   border: none;
   color: #555555;
   padding: 2% 4%;
@@ -99,9 +99,25 @@ img {
   transition-duration: 0.4s;
   cursor: pointer;
 }
+input[type=submit] {
+  border: none;
+  color: #555555;
+  padding: 12% 18%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2vw;
+  margin: 1% 0.5%;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
 .select_flex {
   display: grid;
   grid-template-columns: 70% 30%;
+  width:20%;
+  grid-gap:6%;
 }
 .save_button {
   margin-top: 2%;
