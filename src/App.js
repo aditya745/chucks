@@ -17,13 +17,13 @@ class App extends Component {
           <div>
             <ul className = "navbar">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" className="nav_Link">Home</Link>
               </li>
               <li>
-                <Link to="/savedFacts">SavedFacts</Link>
+                <Link to="/savedFacts" className="nav_Link">SavedFacts</Link>
               </li>
               <li>
-                <Link to="/aboutMe">About Me</Link>
+                <Link to="/aboutMe" className="nav_Link">About Me</Link>
               </li>
             </ul>
             <Switch>

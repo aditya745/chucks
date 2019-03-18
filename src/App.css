@@ -24,7 +24,11 @@ body {
 ul,
 li {
   padding: 1%;
-  color:white
+
+}
+.nav_Link {
+  color:white;
+  text-decoration: none;
 }
 .random_joke_container {
   width: 100%;

@@ -24,7 +24,7 @@ class FactByCategory extends Component {
     const factByCategory = this.state.factByCategory.map(
       (factByCategory, id) => (
         <div>
-          <ul>
+          <ul className="savedFacts_container">
             <li key={id}>{factByCategory}</li>
           </ul>
         </div>
@@ -39,13 +39,25 @@ class FactByCategory extends Component {
           <div className="select_flex">
             <div>
               <select value={this.state.value} onChange={this.handleChange} className="custom_select">
-                <option />
+                <option value="dev">Dev</option>
                 <option value="explicit">Explicit</option>
                 <option value="fashion">Fashion</option>
                 <option value="sport">Sport</option>
+                <option value="food">Food</option>
+                <option value="movie">Movies</option>
+                <option value="celebrity">Celebrity</option>
+                <option value="science">Science</option>
+                <option value="political">Political</option>
+                <option value="religion">Religion</option>
+                <option value="animal">Animal</option>
+                <option value="history">History</option>
+                <option value="music">Music</option>
+                <option value="travel">Travel</option>
+                <option value="career">Career</option>
+                <option value="money">Money</option>
               </select>
             </div>
-            <div>
+            <div className="submit_button input">
               <input type="submit" value="submit" />
             </div>
           </div>
