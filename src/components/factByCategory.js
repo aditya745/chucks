@@ -23,9 +23,9 @@ class FactByCategory extends Component {
   render() {
     const factByCategory = this.state.factByCategory.map(
       (factByCategory, id) => (
-        <div>
+        <div key={id}>
           <ul className="savedFacts_container">
-            <li key={id}>{factByCategory}</li>
+            <li>{factByCategory}</li>
           </ul>
         </div>
       )

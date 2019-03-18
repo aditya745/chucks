@@ -8,7 +8,9 @@ export const getFacts = () => dispatch => {
                 type: GET_FACT,
                 payload: res.data
             })
+        
         )
+        .catch((err) => console.log(err))
 };
 export const savedFacts = value => {
     return {
