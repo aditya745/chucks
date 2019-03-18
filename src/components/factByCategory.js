@@ -18,7 +18,8 @@ class FactByCategory extends Component {
         this.setState({
           factByCategory: [res.data.value]
         })
-      );
+      )
+      .catch(err => console.log(err));
   };
   render() {
     const factByCategory = this.state.factByCategory.map(
