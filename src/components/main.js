@@ -11,7 +11,7 @@ class Main extends Component {
     this.props.getFacts();
   };
   handleSave = (value, id) => {
-    this.props.savedFacts(value, id);
+    this.props.savedFacts(value, id)
   };
 
   render() {
