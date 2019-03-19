@@ -13,7 +13,7 @@ export default function (state = initialState, action) {
         case SAVED_FACT:
             return {
                 ...state,
-                savedFacts: [...state.savedFacts, action.payload]
+                savedFacts: [...new Set([...state.savedFacts, action.payload])]
             };
         default:
             return state;
